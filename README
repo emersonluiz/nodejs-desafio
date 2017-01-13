@@ -1,0 +1,21 @@
+Projeto node.js
+
+endpoints:
+
+	Criação de cadastro: 
+	"\usuarios", post, data: { "nome": "string", "email": "string", "senha": "senha", "telefones": [ { "numero": "123456789", "ddd": "11" } ] }
+
+	Sign in:
+	"\sign_in", post, data: { "email": "string", "senha": "senha" }
+
+	Buscar usuário:
+	"\usuarios\:id", post, header: Authentication: Bearer {token} 
+	(O token, é o retornado nos endpoints: "\sign_in" ou "\usuarios")
+
+Instalar:
+	npm install
+
+rodar:
+	npm start
+
+
