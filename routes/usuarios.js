@@ -10,15 +10,15 @@ module.exports = app => {
 
         .post((req, res) => {
 
-            if (req.body.nome === null) {
+            if (req.body.nome === undefined || req.body.nome === null || req.body.nome === "") {
                 return res.status(400).json({mensagem: "Nome é obrigatório"});
             }
 
-            if (req.body.email === null) {
+            if (req.body.email === undefined || req.body.email === null || req.body.email === "") {
                 return res.status(400).json({mensagem: "Email é obrigatório"});
             }
 
-            if (req.body.senha === null) {
+            if (req.body.senha === undefined || req.body.senha === null || req.body.senha === "") {
                 return res.status(400).json({mensagem: "Senha é obrigatório"});
             }
 
@@ -47,7 +47,7 @@ module.exports = app => {
 
                    BD.create(req.body, (error, usuario) => {
                         if (error) return res.status(500).json({mensagem: error.message});
-                        return res.json(usuario);
+                        return res.status(201).json(usuario);
                     });
                }
 

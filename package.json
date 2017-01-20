@@ -4,7 +4,8 @@
   "description": "API para cadastro de usuarios",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node index.js"
+    "start": "babel-node index.js",
+    "test": "NODE_ENV=test ./node_modules/mocha/bin/mocha test/**/*.js"
   },
   "author": "Emerson Luiz de Castro",
   "license": "ISC",
@@ -20,7 +21,11 @@
     "uuid": "^3.0.1"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
     "grunt": "^0.4.5",
-    "grunt-contrib-jshint": "^0.11.3"
+    "grunt-contrib-jshint": "^0.11.3",
+    "mocha": "*",
+    "should": "*",
+    "supertest": "*"
   }
 }
